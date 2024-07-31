@@ -5,7 +5,7 @@ import { slugify, deslugify } from './slug';
 
 interface Post {
   title: string;
-  excerpt: string | null;
+  description: string | null;
   metaTitle: string | null;
   metaDescription: string | null;
   keywords: string[] | null;

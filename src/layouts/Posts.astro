@@ -13,7 +13,7 @@ type PostType = {
   collection: string;
   data: {
     title: string;
-    excerpt: string;
+    description: string;
     metaTitle: string;
     metaDescription: string;
     keywords: string[] | null;
@@ -72,7 +72,7 @@ type PostType = {
             </a>
           </h2>
           <p class="mt-5 line-clamp-3 text-sm leading-6 text-zinc-600">
-            {post.data.excerpt}
+            {post.data.description}
           </p>
         </div>
       </article>

@@ -15,7 +15,7 @@ export interface Props {
   metaTitle?: string;
   metaDescription?: string;
   keywords?: string;
-  excerpt?: string;
+  description?: string;
 
   image?: string;
   noindex?: boolean;
@@ -23,7 +23,7 @@ export interface Props {
   blogpost?: boolean;
 }
 
-const { title, metaTitle, metaDescription, keywords, excerpt, image, noindex, blogpost } = Astro.props;
+const { title, metaTitle, metaDescription, keywords, description, image, noindex, blogpost } = Astro.props;
 
 /*const ogImage = createOgImage({
   title: metaTitle ? metaTitle : title ? title : config.site.title,
@@ -66,7 +66,7 @@ const { title, metaTitle, metaDescription, keywords, excerpt, image, noindex, bl
 
     <meta
       name="description"
-      content={metaDescription ? metaDescription : excerpt ? excerpt : config.metadata.meta_description}
+      content={metaDescription ? metaDescription : description ? description : config.metadata.meta_description}
     />
     <!-- author from config.json -->
     <meta name="author" content={config.metadata.meta_author} />
@@ -81,7 +81,7 @@ const { title, metaTitle, metaDescription, keywords, excerpt, image, noindex, bl
     <!-- og-description -->
     <meta
       property="og:description"
-      content={metaDescription ? metaDescription : excerpt ? excerpt : config.metadata.meta_description}
+      content={metaDescription ? metaDescription : description ? description : config.metadata.meta_description}
     />
     <meta property="og:type" content="website" />
     <meta
@@ -97,7 +97,7 @@ const { title, metaTitle, metaDescription, keywords, excerpt, image, noindex, bl
     <!-- twitter-description -->
     <meta
       name="twitter:description"
-      content={metaDescription ? metaDescription : excerpt ? excerpt : config.metadata.meta_description}
+      content={metaDescription ? metaDescription : description ? description : config.metadata.meta_description}
     />
     <!-- og-image -->
     <meta property="og:image" content={image ? image : config.site.ogImage} />
@@ -107,6 +107,8 @@ const { title, metaTitle, metaDescription, keywords, excerpt, image, noindex, bl
 
     <script is:inline src="/registerSW.js"></script>
     <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="alternate" type="application/rss+xml" title={config.site.title} href={new URL("rss.xml", Astro.site)}/>
+
     <ViewTransitions />
   </head>
   <body class="bg-white dark:bg-zinc-900/95">
