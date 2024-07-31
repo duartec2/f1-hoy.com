@@ -1,9 +1,28 @@
 /* eslint-disable */
-import { getCollection } from 'astro:content';
+import {getCollection, z} from 'astro:content';
 import type { MDXInstance } from 'astro';
 import { slugify, deslugify } from './slug';
 
 interface Post {
+  title: string;
+  excerpt: string | null;
+  metaTitle: string | null;
+  metaDescription: string | null;
+  keywords: string[] | null;
+  tags: string[];
+  heroImage: string | null;
+
+  pubDate: Date;
+  updatedDate: Date | null;
+
+  categories: string[];
+
+  author: string | null;
+  source: string | null;
+  sourceUrl: string | null;
+}
+
+/*interface Post {
   title: string;
   description: string;
   pubDate: Date;
@@ -12,7 +31,7 @@ interface Post {
   categories: string[];
   tags: string[];
   authors: string[];
-}
+}*/
 
 export function getAllTags(posts: MDXInstance<Post>[] = []) {
   const allTags = new Set<string>();

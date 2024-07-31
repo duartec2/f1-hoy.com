@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "F1 Hoy ",
+    "title": "F1 Hoy",
     "base_url": "https://f1-hoy.com",
     "base_path": "/",
     "favicon": "/favicon.png",
@@ -8,19 +8,20 @@
     "logoDark": "/logoDark.png",
     "lang": "es",
     "description": "Tu portal de noticias de Fórmula 1. Resúmenes concisos y opiniones expertas sobre las últimas novedades del mundo de la F1, basados en los mejores sitios especializados. Mantente al día con pilotos, equipos, carreras y tecnología de la máxima categoría del automovilismo.",
-    "pageSize": 6
+    "pageSize": 6,
+    "ogImage": "https://res.cloudinary.com/dszb7dkqx/image/upload/v1722392827/og_image_woni9a.png"
   },
   "features": {
     "youtube": false,
     "dark_mode": true
   },
   "metadata": {
-    "meta_author": "Oscar Barajas @gndx",
+    "meta_author": "F1 Hoy",
     "meta_description": "Resúmenes y opiniones de las últimas noticias de Fórmula 1. Tu fuente diaria de información actualizada sobre el mundo de la F1."
   },
   "author": {
-    "name": "Ricardo Duarte",
+    "name": "F1 Hoy",
     "avatar": "https://s3.amazonaws.com/gndx.dev/gndx-astro-avatar.png",
-    "bio": "EV0 is a free and open-source serverless blog template, built with Astro, Tailwind CSS, and TypeScript."
+    "bio": ""
   }
 }

@@ -10,11 +10,17 @@ import { slugify } from "@utils/slug";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, heroImage, categories, tags } =
+const { title, metaDescription, keywords, pubDate, heroImage, categories, tags, author, source, sourceUrl } =
   Astro.props;
 ---
 
-<Base meta_title={title} description={description} image={heroImage} blogpost>
+<Base
+    metaTitle={title}
+    image={heroImage}
+    metaDescription: {metaDescription}
+    keywords: {keywords}
+    blogpost
+>
   <article>
     <div class="rounded-lg block overflow-hidden mb-8">
       {
@@ -72,6 +78,7 @@ const { title, description, pubDate, heroImage, categories, tags } =
     <div class="prose prose-green prose-md md:prose-lg min-w-full">
       <slot />
     </div>
+    <div>Fuente: <a href={sourceUrl} target="_blank" class="underline">{source}</a></div>
     <div class="mt-8">
       {
         tags?.map((tag) => (
