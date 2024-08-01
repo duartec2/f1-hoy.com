@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply bg-brand-base dark:bg-brand-dark-100 antialiased scroll-smooth;
+  }
+
   .prose code {
     @apply text-base;
   }
