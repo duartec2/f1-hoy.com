@@ -1,0 +1,131 @@
+---
+import { Image } from "astro:assets";
+import FormattedDate from "@components/FormattedDate.astro";
+import config from "@config/config.json";
+import { slugify } from "@utils/slug";
+
+const { posts } = Astro.props;
+
+type PostType = {
+  id: string;
+  slug: string;
+  body: string;
+  collection: string;
+  data: {
+    title: string;
+    description: string;
+    metaTitle: string;
+    metaDescription: string;
+    keywords: string[] | null;
+    tags: string[];
+    heroImage: string;
+    pubDate: Date;
+    updatedDate: Date | null;
+
+    categories: string[];
+    author: string | null;
+    source: string | null;
+    sourceUrl: string | null;
+  };
+};
+
+---
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+    {
+    posts?.map((post: PostType, index) => (
+
+                <div class:list={[
+                        'tile relative',
+                        { 'row-span-2 col-span-1 md:col-span-2' : index === 0 },
+                        { 'tile-sm' : index !== 0 },
+                    ]}
+                >
+                    <a href={`/blog/${post.slug}/`} class="w-full h-full group">
+                        <figure>
+                            <Image
+                                    class:list={[
+                                        'w-full object-cover rounded-lg',
+                                        { 'h-[400px]' : index === 0 },
+                                        { 'h-full' : index !== 0 }
+                                    ]}
+                                    src={post.data.heroImage}
+                                    alt={post.data.title}
+                                    inferSize={true}
+                                    decoding="async"
+                                    loading="lazy"
+                            />
+                        </figure>
+                        <div class="tile-headline">
+                            <h2>{post.data.title}</h2>
+                            <div class="tile-body-animated">
+                                <p>{post.data.description}</p>
+                                <div class="flex items-center justify-start pt-1">
+                                    <span class="text-xs text-stone-500">
+                                        <FormattedDate date={post.data.pubDate} />
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+
+
+         <!--<div class="row-span-2 col-span-1 md:col-span-2 tile relative">
+
+             <a href={`/blog/${post.slug}/`} class="w-full h-full group">
+                 <figure>
+                     <Image
+                             class="w-full h-[400px] object-cover rounded-lg"
+                             src={post.data.heroImage}
+                             alt={post.data.title}
+                             inferSize={true}
+                             decoding="async"
+                             loading="lazy"
+                     />
+                 </figure>
+                 <div class="tile-headline">
+                     <h2>{post.data.title}</h2>
+                     <div class="h-0 group-hover:h-[105px] transition-all ease-in-out duration-300 overflow-hidden">
+                         <p>{post.data.description}</p>
+                         <div class="flex items-center justify-start pt-1">
+                        <span class="text-xs text-stone-500">
+                            <FormattedDate date={post.data.pubDate} />
+                        </span>
+                         </div>
+                     </div>
+                 </div>
+             </a>
+         </div>
+:
+        <div class="tile tile-sm relative">
+            <a href={`/blog/${post.slug}/`} class="w-full h-full group">
+                <figure>
+                    <Image
+                            class="w-full h-auto object-cover rounded-lg"
+                            src={post.data.heroImage}
+                            alt={post.data.title}
+                            inferSize={true}
+                            decoding="async"
+                            loading="lazy"
+                    />
+                </figure>
+                <div class="tile-headline">
+                    <h2>{post.data.title}</h2>
+                    <div class="h-0 group-hover:h-[80px] transition-all ease-in-out duration-300 overflow-hidden">
+                        <p class="">{post.data.description}</p>
+                        <div class="flex items-center justify-start pt-1">
+                        <span class="text-xs text-stone-500">
+                            <FormattedDate date={post.data.pubDate} />
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>-->
+
+    ))
+    }
+</div>
+

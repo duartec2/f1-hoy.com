@@ -2,13 +2,13 @@
 interface Props {
   date: Date;
 }
-
+import config from "@config/config.json";
 const { date } = Astro.props;
 ---
 
 <time datetime={date.toISOString()}>
   {
-    date.toLocaleDateString("en-us", {
+    date.toLocaleDateString(config.locale, {
       year: "numeric",
       month: "short",
       day: "numeric",

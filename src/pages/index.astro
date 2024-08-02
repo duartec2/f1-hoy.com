@@ -3,13 +3,19 @@ import { getCollection } from "astro:content";
 import HomePagination from "@components/HomePagination.astro";
 import Base from "@layouts/Base.astro";
 import Posts from "@layouts/Posts.astro";
+import ImageBoard from "../layouts/ImageBoard.astro";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+
+const latestPosts = posts.slice(0, 3);
+const otherPosts = posts.slice(3);
 ---
 
 <Base>
-  <Posts posts={posts} />
+  <h1 class="hidden">F1 Hoy</h1>
+  <ImageBoard posts={latestPosts} />
+  <Posts posts={otherPosts} />
   <HomePagination />
 </Base>
