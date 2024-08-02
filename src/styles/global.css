@@ -33,40 +33,70 @@
     @apply  block px-2 py-2 text-sm border-b-2 border-b-transparent text-stone-600 hover:text-black transition duration-500 hover:border-accent dark:text-stone-400 dark:hover:text-white;
   }
 
+  .card {
+    @apply flex w-full flex-col items-start bg-white dark:bg-stone-950 rounded-lg
+    border border-stone-200 dark:border-black
+    outline outline-white  dark:outline-stone-950
+    outline-1 outline-offset-1;
+  }
+
+  .card-header {
+    @apply rounded-t-lg block overflow-hidden;
+  }
+
+  .card-body {
+    @apply p-4 text-sm text-stone-800;
+  }
+
+  .card-body h2 {
+    @apply text-lg font-semibold leading-6;
+  }
+
+  .card-body p {
+    @apply mt-4 line-clamp-3 leading-5
+  }
+
+  .tag {
+    @apply text-xs font-medium px-2 py-0.5 ml-1 rounded bg-accent text-white;
+  }
+
+
+/*
   .tile {
-    @apply bg-stone-200 dark:bg-stone-950 rounded-lg overflow-hidden;
+    @apply  overflow-hidden;
+  }
+
+  .tile figure {
+    @apply bg-stone-200 dark:bg-stone-950 rounded-lg;
   }
 
   .tile-headline {
-    @apply absolute transition-all duration-300 inset-x-0 bottom-0 z-10
-    p-4
-    bg-black text-white border-t-2 border-accent
-    flex flex-col justify-end items-end group-hover:bg-black/70;
+
   }
 
   .tile-body-animated {
-    @apply h-0 group-hover:h-[105px] transition-all ease-in-out duration-300 overflow-hidden
+
   }
 
   .tile-headline h2 {
-    @apply  text-xl font-semibold leading-6 !text-white;
+    @apply mt-3 text-xl font-semibold leading-6 text-zinc-900 dark:text-white group-hover:text-zinc-600
   }
 
   .tile-sm .tile-headline h2 {
-    @apply  text-sm;
+
   }
 
   .tile-sm .tile-headline {
-    @apply px-4 py-2 ;
+
   }
 
   .tile-sm .tile-headline p {
-    @apply line-clamp-2 text-xs pt-2;
+
   }
 
   .tile-headline p {
-    @apply line-clamp-3 text-sm leading-6 text-stone-300 pt-4;
-  }
+
+  }*/
 
 
 

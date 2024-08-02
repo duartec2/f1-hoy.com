@@ -35,7 +35,7 @@ type PostType = {
     posts?.map((post: PostType, index) => (
 
                 <div class:list={[
-                        'tile relative',
+                        'tile',
                         { 'row-span-2 col-span-1 md:col-span-2' : index === 0 },
                         { 'tile-sm' : index !== 0 },
                     ]}

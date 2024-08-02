@@ -9,13 +9,12 @@ const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 
-const latestPosts = posts.slice(0, 3);
-const otherPosts = posts.slice(3);
+/*const latestPosts = posts.slice(0, 3);
+const otherPosts = posts.slice(3);*/
 ---
 
 <Base>
   <h1 class="hidden">F1 Hoy</h1>
-  <ImageBoard posts={latestPosts} />
-  <Posts posts={otherPosts} />
+  <Posts posts={posts} />
   <HomePagination />
 </Base>
