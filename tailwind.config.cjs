@@ -6,46 +6,23 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                brand: {
-                    'base': {
-                        DEFAULT: '#FEFEFE',
-                        100: '#333333',
-                        200: '#666666',
-                        300: '#999999',
-                        400: '#cccccc',
-                        500: '#fefefe',
-                        600: '#ffffff',
-                        700: '#ffffff',
-                        800: '#ffffff',
-                        900: '#ffffff'
-                    },
-                    'dark': {
-                        DEFAULT: '#605B66',
-                        100: '#131215',
-                        200: '#272429',
-                        300: '#3a373e',
-                        400: '#4d4952',
-                        500: '#605b66',
-                        600: '#807988',
-                        700: '#a09aa6',
-                        800: '#bfbcc4',
-                        900: '#dfdde1'
-                    },
-                    'accent': {
-                        DEFAULT: '#FB0232',
-                        100: '#32010b',
-                        200: '#650115',
-                        300: '#970220',
-                        400: '#ca022a',
-                        500: '#fb0232',
-                        600: '#fd355d',
-                        700: '#fd6886',
-                        800: '#fe9aae',
-                        900: '#fecdd7'
-                    },
+                'accent': {
+                    DEFAULT: '#FB0232',
+                    100: '#32010b',
+                    200: '#650115',
+                    300: '#970220',
+                    400: '#ca022a',
+                    500: '#fb0232',
+                    600: '#fd355d',
+                    700: '#fd6886',
+                    800: '#fe9aae',
+                    900: '#fecdd7'
                 }
             },
-
+            fontFamily: {
+                body: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                title: ['Kanit', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            },
             typography: (theme) => ({
                 DEFAULT: {
                     css: {

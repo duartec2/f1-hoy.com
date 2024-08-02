@@ -1,10 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    @apply bg-brand-base dark:bg-brand-dark-100 antialiased scroll-smooth;
+    @apply bg-stone-100 dark:bg-black antialiased scroll-smooth font-body;
+  }
+
+  header {
+    @apply bg-white dark:bg-stone-950 border-b border-stone-200 dark:border-black fixed w-full md:static z-50;
+  }
+
+  main {
+    @apply border-t border-white dark:border-stone-900;
+  }
+
+  .wrapper {
+    @apply mx-auto max-w-screen-lg px-4 py-4 sm:px-6 sm:py-12 lg:px-8;
+  }
+
+  #nav-menu {
+    @apply hidden fixed inset-x-0 text-center bg-white dark:bg-stone-950 top-16 sm:top-32 bottom-0 z-30;
+  }
+
+  #nav-menu li a{
+    @apply block py-2 text-stone-600 md:text-stone-500 hover:text-black dark:text-white dark:md:text-white/80  dark:hover:text-white hover:text-4xl transition-all duration-500;
+  }
+
+  .nav-link {
+    @apply  block px-2 py-2 text-sm border-b-2 border-b-transparent text-stone-600 hover:text-black transition duration-500 hover:border-accent dark:text-stone-400 dark:hover:text-white;
   }
 
   .prose code {
@@ -42,6 +68,8 @@
   height: 100%;
 }
 
+
+/** Nav menu **/
 input#nav-toggle:checked ~ label#show-button {
   @apply hidden;
 }
@@ -54,27 +82,20 @@ input#nav-toggle:checked ~ #nav-menu {
   @apply block md:flex;
 }
 
+/** Theme toggle */
 .sun {
-  @apply stroke-zinc-500 transition-all;
+  @apply stroke-yellow-500 transition-all;
 }
-.moon {
-  @apply stroke-transparent transition-all;
-}
+
 .dark .sun {
-  @apply stroke-transparent;
+  @apply stroke-stone-400;
 }
-.dark .moon {
-  @apply stroke-zinc-400;
-}
+
 #themeToggle:hover .sun {
-  @apply stroke-zinc-800;
+  @apply stroke-black;
 }
-#themeToggle:hover .moon {
-  @apply stroke-transparent;
-}
+
 .dark #themeToggle:hover .sun {
-  @apply stroke-transparent;
+  @apply stroke-yellow-500;
 }
-.dark #themeToggle:hover .moon {
-  @apply stroke-zinc-200;
-}
+
