@@ -1,23 +1,70 @@
 ---
 import config from "@config/config.json";
-import HeartIcon from "@components/icons/HeartIcon.astro";
+import {Image} from 'astro:assets';
+
 const year = new Date().getFullYear();
+
+import social from "@config/social";
+
+const socialItems = social.networks;
 ---
 
-<footer class="mx-auto max-w-screen-lg px-4 sm:px-6 lg:px-8">
-  <div class="border-t border-zinc-100 dark:border-zinc-900">
-    <!--<p class="text-center text-xs/relaxed text-zinc-500 dark:text-zinc-400 mt-8 mb-8">
-      &copy; {year}. {config.site.title} - EV0. All rights REVERSED
-      <span class="block mt-2">
-        Made with
-        <HeartIcon />
-        in Medellín, Colombia. by
-        <a
-          href="https://gndx.dev"
-          class="text-zinc-700 decoration-dashed transition hover:text-zinc-700/75 dark:text-zinc-200 dark:hover:text-zinc-200/75"
-          >GNDX</a
-        >
-      </span>
-    </p>-->
-  </div>
+<footer>
+    <div class="wrapper">
+        <div class="flex justify-between items-center pb-10 border-b border-stone-100 dark:border-black">
+            <div>
+                <a href="/" class="logo group" aria-current="page">
+                    <figure class="block dark:hidden">
+                        <Image
+                                src={config.site.logoFooterLight}
+                                alt={config.site.title}
+                                class="h-6 w-auto opacity-50 group-hover:opacity-80 transition-opacity duration-200"
+                                inferSize={true}
+                                decoding="async"
+                                loading="lazy"
+                        />
+                    </figure>
+                    <figure class="hidden dark:block">
+                        <Image
+                                src={config.site.logoFooterDark}
+                                alt={config.site.title}
+                                class="h-6 w-auto opacity-50 group-hover:opacity-80 transition-opacity duration-200"
+                                inferSize={true}
+                                decoding="async"
+                                loading="lazy"
+                        />
+                    </figure>
+                </a>
+            </div>
+            <!--<div class="social flex space-x-5">
+                {
+                    socialItems?.map((item) => (
+                            <a href={item.url} target="_blank" rel="noopener noreferrer">
+                                <figure>
+                                    <Fragment set:html={item.svg}/>
+                                </figure>
+                            </a>
+                    ))
+                }
+
+            </div>-->
+        </div>
+
+        <div class="disclaimer py-6 border-t border-stone-300 dark:border-stone-900">
+            <p class="pb-4 !text-stone-500">
+                Este sitio web no es oficial y no está asociado de ninguna manera con las empresas de Formula 1.
+                F1, FORMULA ONE, FORMULA 1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX y las marcas relacionadas son
+                marcas comerciales de Formula One Licensing B.V.
+            </p>
+
+            <p class="!text-stone-500">
+                Los artículos de este blog se generan de manera experimental utilizando inteligencia artificial. Se
+                recomienda verificar la información de manera independiente. No nos hacemos responsables por posibles
+                inexactitudes.
+            </p>
+        </div>
+
+        <div>&copy; {year}, {config.site.title}.</div>
+    </div>
+
 </footer>

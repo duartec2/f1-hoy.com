@@ -14,7 +14,7 @@
   }
 
   main {
-    @apply border-t border-white dark:border-stone-900;
+    @apply border-y border-t-white dark:border-t-stone-900 border-b-stone-300 dark:border-b-stone-900;
   }
 
   .wrapper {
@@ -36,8 +36,9 @@
   .card {
     @apply flex w-full flex-col items-start bg-white dark:bg-stone-950 rounded-lg
     border border-stone-200 dark:border-black
-    outline outline-white  dark:outline-stone-950
-    outline-1 outline-offset-1;
+    outline outline-white  dark:outline-stone-900 outline-1
+    hover:scale-110 transition-all duration-300 ease-in-out
+    hover:shadow-lg;
   }
 
   .card-header {
@@ -59,6 +60,14 @@
   .tag {
     @apply text-xs font-medium px-2 py-0.5 ml-1 rounded bg-accent text-white;
   }
+
+  footer {
+    @apply tracking-wider text-stone-500 text-xs border-t
+    bg-stone-200 dark:bg-stone-950
+    border-t-stone-100 dark:border-t-black
+  }
+
+
 
 
 /*
@@ -98,6 +107,13 @@
 
   }*/
 
+  h1 {
+    @apply text-2xl md:text-3xl font-bold mb-8
+  }
+
+  a.link {
+    @apply text-black dark:text-white hover:underline hover:text-accent dark:hover:text-accent transition duration-300 ease-in-out;
+  }
 
 
 
@@ -111,17 +127,17 @@
   h4,
   h5,
   h6 {
-    @apply text-zinc-800 dark:text-zinc-200 !important;
+    @apply text-stone-800 dark:text-stone-200 !important;
   }
   p,
   li,
   strong,
   blockquote,
   table * {
-    @apply text-zinc-700 dark:text-zinc-300;
+    @apply text-stone-700 dark:text-stone-300;
   }
   kbd {
-    @apply bg-white text-zinc-700;
+    @apply bg-white text-stone-700;
   }
   mark {
     @apply bg-yellow-300;
