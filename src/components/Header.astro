@@ -23,7 +23,7 @@ const {main}: { main: NavigationLink[] } = menu;
                         <Image
                                 src={config.site.logoLight}
                                 alt={config.site.title}
-                                class="h-10 w-auto"
+                                class="h-8 md:h-10 w-auto"
                                 inferSize={true}
                                 decoding="async"
                                 loading="lazy"
@@ -33,7 +33,7 @@ const {main}: { main: NavigationLink[] } = menu;
                         <Image
                                 src={config.site.logoDark}
                                 alt={config.site.title}
-                                class="h-10 w-auto"
+                                class="h-8 md:h-10 w-auto"
                                 inferSize={true}
                                 decoding="async"
                                 loading="lazy"
@@ -48,12 +48,12 @@ const {main}: { main: NavigationLink[] } = menu;
                 <label
                         id="show-button"
                         for="nav-toggle"
-                        class="order-2 flex cursor-pointer items-center text-stone-400 md:hidden"
+                        class="order-2 flex cursor-pointer items-center text-neutral-500 md:hidden"
                 >
                     <HamburgerIcon/>
                 </label>
                 <label id="hide-button" for="nav-toggle"
-                       class="order-2 hidden cursor-pointer items-center text-stone-400">
+                       class="order-2 hidden cursor-pointer items-center text-neutral-500">
                     <CloseIcon/>
                 </label>
 
@@ -63,11 +63,7 @@ const {main}: { main: NavigationLink[] } = menu;
                         {
                             main?.map((menu) => (
                                 <li>
-                                    <a href={menu?.url}
-                                       class=""
-                                    >
-                                        {menu?.name}
-                                    </a>
+                                    <a href={menu?.url}>{menu?.name}</a>
                                 </li>
                             ))
                         }

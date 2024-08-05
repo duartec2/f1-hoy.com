@@ -50,12 +50,12 @@ const {title, metaDescription, keywords, pubDate, heroImage, categories, tags, a
                     <CalendarIcon/>
                     <FormattedDate date={pubDate}/>
                 </div>
-                <div class="flex items-center text-sm text-stone-500">
+                <div class="flex items-center ">
                     {
                         categories?.slice(0, 1).map((category) => (
                                 <a
                                         href={`/categories/${slugify(category)}`}
-                                        class="tag text-base"
+                                        class="tag"
                                 >
                                     {category}
                                 </a>
@@ -65,7 +65,7 @@ const {title, metaDescription, keywords, pubDate, heroImage, categories, tags, a
             </div>
         </div>
 
-        <div class="prose prose-stone prose-md md:prose-lg min-w-full">
+        <div class="prose dark:prose-invert prose-md md:prose-lg min-w-full">
             <slot/>
         </div>
 
