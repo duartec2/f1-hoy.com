@@ -21,7 +21,6 @@ type PostType = {
         heroImage: string;
         pubDate: Date;
         updatedDate: Date | null;
-
         categories: string[];
         author: string | null;
         source: string | null;
@@ -29,7 +28,6 @@ type PostType = {
     };
 };
 ---
-<h1 class="hidden">F1 Hoy</h1>
 <div class="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:mx-0 lg:max-w-none">
     {
         posts?.slice(0, config.site.pageSize).map((post: PostType) => (
@@ -60,15 +58,16 @@ type PostType = {
                             {post.data.description}
                         </p>
                         <div class="text-xs pt-4 flex items-center gap-x-2 justify-between">
-                            <FormattedDate date={post.data.pubDate}/>
+                            <div class="text-neutral-500 dark:text-neutral-400">
+                                <FormattedDate date={post.data.pubDate}/>
+                            </div>
 
                             <div>
                                 {post.data.categories.slice(0, 2).map((item) => (
-                                        <a href={`/categories/${slugify(item)}`} class="tag">{item}</a>
+                                        <a href={`/categories/${slugify(item)}`} class="category-tag">{item}</a>
                                 ))}
                             </div>
                         </div>
-
                     </div>
                 </article>
         ))

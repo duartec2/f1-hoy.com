@@ -1,11 +1,8 @@
 ---
 import Header from "@components/Header.astro";
-import Hero from "@components/Hero.astro";
 import FeaturedVideos from "@components/FeaturedVideos.astro";
 import Footer from "@components/Footer.astro";
 import config from "@config/config.json";
-import { createOgImage } from "@utils/createOgImage";
-
 import "@styles/global.css";
 
 import { ViewTransitions } from "astro:transitions";
@@ -24,11 +21,6 @@ export interface Props {
 }
 
 const { title, metaTitle, metaDescription, keywords, description, image, noindex, blogpost } = Astro.props;
-
-/*const ogImage = createOgImage({
-  title: metaTitle ? metaTitle : title ? title : config.site.title,
-  meta: [config.site.title, config.site.base_url].join(" · "),
-});*/
 ---
 
 <!doctype html>

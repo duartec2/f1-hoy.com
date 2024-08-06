@@ -22,7 +22,6 @@ const {title, metaDescription, keywords, pubDate, heroImage, categories, tags, a
         blogpost
 >
     <article>
-
         <div class="rounded-lg block overflow-hidden mb-12">
             {
                 heroImage && (
@@ -41,10 +40,10 @@ const {title, metaDescription, keywords, pubDate, heroImage, categories, tags, a
             }
         </div>
 
-        <div class="mb-12">
-            <h1 class="md:text-center">{title}</h1>
+        <div>
+            <h1 class="text-center text-balance">{title}</h1>
 
-            <div class="flex flex-wrap items-center justify-between md:justify-center gap-6">
+            <div class="flex md:flex-row flex-col flex-wrap items-center justify-center gap-4 md:gap-6">
 
                 <div class="flex items-center text-sm text-stone-500">
                     <CalendarIcon/>
@@ -53,10 +52,7 @@ const {title, metaDescription, keywords, pubDate, heroImage, categories, tags, a
                 <div class="flex items-center ">
                     {
                         categories?.slice(0, 1).map((category) => (
-                                <a
-                                        href={`/categories/${slugify(category)}`}
-                                        class="tag"
-                                >
+                                <a href={`/categories/${slugify(category)}`} class="category-tag">
                                     {category}
                                 </a>
                         ))
@@ -65,19 +61,17 @@ const {title, metaDescription, keywords, pubDate, heroImage, categories, tags, a
             </div>
         </div>
 
-        <div class="prose dark:prose-invert prose-md md:prose-lg min-w-full">
+        <div class="my-12 prose dark:prose-invert prose-md md:prose-lg min-w-full">
             <slot/>
         </div>
 
-        <div class="mt-12 text-stone-300">Fuente: <a href={sourceUrl} target="_blank" class="link font-medium">{source}</a></div>
-        <div class="mt-12">
+        <div>Fuente: <a href={sourceUrl} target="_blank" class="link font-medium">{source}</a></div>
+
+        <div class="my-12 flex flex-wrap gap-2">
             {
                 tags?.map((tag) => (
-                        <a
-                                href={`/tags/${slugify(tag)}`}
-                                class="tag text-base"
-                        >
-                            {tag}
+                        <a href={`/tags/${slugify(tag)}`} class="tag text-sm md:text-base">
+                            #{tag}
                         </a>
                 ))
             }

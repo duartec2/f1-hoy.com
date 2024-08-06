@@ -45,9 +45,7 @@ const {main}: { main: NavigationLink[] } = menu;
             <div class="relative order-3 flex md:hidden">
                 <!-- navbar toggler -->
                 <input id="nav-toggle" type="checkbox" class="hidden"/>
-                <label
-                        id="show-button"
-                        for="nav-toggle"
+                <label id="show-button" for="nav-toggle"
                         class="order-2 flex cursor-pointer items-center text-neutral-500 md:hidden"
                 >
                     <HamburgerIcon/>
@@ -74,11 +72,11 @@ const {main}: { main: NavigationLink[] } = menu;
             <ul class="ml-auto hidden items-center gap-6 md:flex lg:flex">
                 {
                     main?.map((menu) => (
-                            <li>
-                                <a href={menu?.url} class="nav-link">
-                                    {menu?.name}
-                                </a>
-                            </li>
+                        <li>
+                            <a href={menu?.url} class="nav-link">
+                                {menu?.name}
+                            </a>
+                        </li>
                     ))
                 }
             </ul>
