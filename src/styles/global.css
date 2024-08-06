@@ -63,7 +63,14 @@
     }
 
     .tag {
-        @apply text-xs font-medium px-2 py-0.5 ml-1 rounded bg-accent text-white;
+        @apply font-medium px-3 py-0.5 rounded-full bg-neutral-500 dark:bg-neutral-700 text-white text-nowrap;
+    }
+
+    .category-tag {
+        @apply text-xs font-medium px-2 py-0.5 ml-1 rounded-full tracking-wide
+        bg-accent text-white
+        hover:bg-black dark:hover:bg-neutral-700
+        transition duration-300 ease-in-out;
     }
 
     footer {
@@ -88,6 +95,15 @@
         border-2 border-accent dark:hover:border-accent
         focus:outline-none focus:ring ring-accent/50 active:bg-accent
         transition duration-200
+    }
+
+    .button-pag {
+        @apply inline-flex h-8 w-8 items-center justify-center rounded rtl:rotate-180 transition duration-300 ease-in-out
+        border-2
+        border-neutral-400 text-neutral-500
+        dark:border-neutral-800 dark:text-neutral-600
+        hover:border-accent hover:text-black
+        dark:hover:border-accent dark:hover:text-white;
     }
 
 
