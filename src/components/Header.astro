@@ -5,6 +5,8 @@ import config from '@config/config.json';
 import HamburgerIcon from '@icons/HamburgerIcon.astro';
 import CloseIcon from '@icons/CloseIcon.astro';
 import ThemeIcon from '@components/ThemeIcon.astro';
+import LogoLight from '../assets/f1hoy-color_zxjxsf.png';
+import LogoDark from '../assets/f1hoy-color-inv_sxhs30.png';
 
 export interface NavigationLink {
     name: string;
@@ -21,7 +23,7 @@ const {main}: { main: NavigationLink[] } = menu;
                 <a href="/" class="logo flex items-center" aria-current="page">
                     <figure class="block dark:hidden">
                         <Image
-                                src={config.site.logoLight}
+                                src={LogoLight}
                                 alt={config.site.title}
                                 class="h-8 md:h-10 w-auto"
                                 inferSize={true}
@@ -31,7 +33,7 @@ const {main}: { main: NavigationLink[] } = menu;
                     </figure>
                     <figure class="hidden dark:block">
                         <Image
-                                src={config.site.logoDark}
+                                src={LogoDark}
                                 alt={config.site.title}
                                 class="h-8 md:h-10 w-auto"
                                 inferSize={true}

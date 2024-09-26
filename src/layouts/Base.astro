@@ -5,8 +5,6 @@ import Footer from "@components/Footer.astro";
 import config from "@config/config.json";
 import "@styles/global.css";
 
-import {ViewTransitions} from "astro:transitions";
-
 export interface Props {
     title?: string;
     metaTitle?: string;
@@ -91,8 +89,6 @@ const {title, metaTitle, metaDescription, keywords, description, image, noindex,
         <!-- Google AdSense -->
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7992654540330519"
                 crossorigin="anonymous"></script>
-
-        <ViewTransitions/>
 </head>
 <body>
 <Header/>

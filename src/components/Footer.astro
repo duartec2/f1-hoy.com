@@ -1,6 +1,8 @@
 ---
 import config from "@config/config.json";
 import {Image} from 'astro:assets';
+import LogoFooterLight from '../assets/f1hoy-1tone-black_eqqo0o.png';
+import LogoFooterDark from '../assets/f1hoy-1tone-white_qoaoip.png';
 
 const year = new Date().getFullYear();
 
@@ -16,7 +18,7 @@ const socialItems = social.networks;
                 <a href="/" class="logo group" aria-current="page">
                     <figure class="block dark:hidden">
                         <Image
-                                src={config.site.logoFooterLight}
+                                src={LogoFooterLight}
                                 alt={config.site.title}
                                 class="h-6 w-auto opacity-50 group-hover:opacity-80 transition-opacity duration-200"
                                 inferSize={true}
@@ -26,7 +28,7 @@ const socialItems = social.networks;
                     </figure>
                     <figure class="hidden dark:block">
                         <Image
-                                src={config.site.logoFooterDark}
+                                src={LogoFooterDark}
                                 alt={config.site.title}
                                 class="h-6 w-auto opacity-50 group-hover:opacity-80 transition-opacity duration-200"
                                 inferSize={true}
